@@ -1,6 +1,4 @@
-# Distance Tracker
-
-## About
+# About
 
 It's a small web site for practicing ASP.NET 5 (vNext), AngularJS, Entity Framework 7 and other stuff.
 
@@ -25,3 +23,4 @@ The web site can be used by anyone who wants. It's available [here](http://dista
 - Remove bootstrap.js dependency because we use angular-ui-bootstrap anyway so it's not needed.
 - Add "Change Password" page. Probably routing is needed because there will be more pages and it can get messy pretty easily.
 - Don't show HTTP errors in browser's log for "/api/user" methods.
+

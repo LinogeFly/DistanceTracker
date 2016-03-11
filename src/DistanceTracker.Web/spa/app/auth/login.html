@@ -1,0 +1,43 @@
+﻿<div class="modal-content" ng-controller="loginController">
+    <div class="modal-header">
+        <h4 class="modal-title">Log In</h4>
+    </div>
+    <div class="modal-body">
+        <form role="form" name="form" novalidate>
+            <div class="alert alert-danger" role="alert" ng-show="lastError">{{ lastError }}</div>
+
+            <div class="form-group" ng-class="{ 'has-error' : form.tbxUserName.$invalid && form.tbxUserName.$dirty }">
+                <label class="control-label" for="auth-dialog-login-username">Username</label>
+                <input type="text" class="form-control" id="auth-dialog-login-username" name="tbxUserName"
+                       maxlength="20" required
+                       ng-model="userModel.userName"
+                       ng-disabled="isBusy" />
+                <div class="help-block" ng-messages="form.tbxUserName.$error" ng-if="form.tbxUserName.$dirty && form.tbxUserName.$touched">
+                    <div ng-message="required">This field is required.</div>
+                </div>
+            </div>
+            <div class="form-group" ng-class="{ 'has-error' : form.tbxPassword.$invalid && form.tbxPassword.$dirty }">
+                <label class="control-label" for="auth-dialog-login-password">Password</label>
+                <input type="password" class="form-control" id="auth-dialog-login-password" name="tbxPassword"
+                       maxlength="20" required
+                       ng-model="userModel.password"
+                       ng-disabled="isBusy" />
+                <div class="help-block" ng-messages="form.tbxPassword.$error" ng-if="form.tbxPassword.$dirty && form.tbxPassword.$touched">
+                    <div ng-message="required">This field is required.</div>
+                </div>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" id="auth-dialog-login-rememberMe" ng-model="userModel.rememberMe" ng-disabled="isBusy" />
+                    Keep me logged in
+                </label>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary" ng-click="onLogInClick()" ng-disabled="isBusy || form.$invalid">
+            {{ isBusy ? 'Logging in...' : 'Log In'}}
+        </button>
+        <a class="btn btn-link" ng-click="setAuthView('signup')" ng-disabled="isBusy">Register</a>
+    </div>
+</div>

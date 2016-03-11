@@ -1,0 +1,56 @@
+﻿#menu {
+    z-index: 100;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+#menu-button {
+    border-radius: 0;
+    border-left: 0;
+    float: right;
+}
+
+#menu-status {
+    height: 34px;
+    background-color: #ffffff;
+    padding: 0 15px;
+    border: 1px solid #ccc;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+    #menu-status label {
+        margin: 0;
+    }
+
+#menu-views {
+    z-index: 100;
+    position: absolute;
+    top: 43px;
+    right: 10px;
+    border-radius: 0;
+}
+
+.menu-view {
+    margin-top: 15px;
+    text-align: right;
+}
+
+    .menu-view .btn {
+        min-width: 70px;
+    }
+
+#menu-view-history {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+    #menu-view-history table {
+        margin-bottom: 0;
+    }
+
+#menu-auth {
+    text-align: right;
+    margin-bottom: 15px;
+}

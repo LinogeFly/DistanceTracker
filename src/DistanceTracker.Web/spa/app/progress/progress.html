@@ -1,0 +1,14 @@
+﻿<div class="menu-view" ng-controller="progressController">
+    <div class="form-group">
+        <input type="number" id="tbxProgress" class="form-control" placeholder="Distance in meters"
+               ng-model="progress.distance"
+               ng-disabled="progress.isSaving"/>
+    </div>
+    <div>
+        <button class="btn btn-primary" type="button" id="btnSaveProgress"
+                ng-click="saveProgress()"
+                ng-disabled="progress.isSaving || progress.distance === null || progress.distance === 0">
+            {{ progress.isSaving ? 'Saving...' : 'Save'}}
+        </button>
+    </div>
+</div>

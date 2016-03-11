@@ -1,0 +1,53 @@
+﻿<div class="modal-content" ng-controller="signupController">
+    <div class="modal-header">
+        <h4 class="modal-title">Registration</h4>
+    </div>
+    <div class="modal-body">
+        <form role="form" name="form" novalidate>
+            <div class="alert alert-danger" role="alert" ng-show="lastError">{{ lastError }}</div>
+
+            <div class="form-group" ng-class="{ 'has-error' : form.tbxUserName.$invalid && form.tbxUserName.$dirty && form.tbxUserName.$touched }">
+                <label class="control-label" for="auth-dialog-signup-username">Username</label>
+                <input type="text" class="form-control" id="auth-dialog-signup-username" name="tbxUserName" 
+                       minlength="3" maxlength="20" ng-pattern="/^[A-z][A-z0-9]*$/" required
+                       ng-model="userModel.userName"
+                       ng-disabled="isBusy" />
+                <div class="help-block" ng-messages="form.tbxUserName.$error" ng-if="form.tbxUserName.$dirty && form.tbxUserName.$touched">
+                    <div ng-message="required">This field is required.</div>
+                    <div ng-message="minlength, maxlength">Length must be between 3 and 20.</div>
+                    <div ng-message="pattern">Username can only contain letters, numbers and underscores.</div>
+                </div>
+            </div>
+            <div class="form-group" ng-class="{ 'has-error' : form.tbxPassword.$invalid && form.tbxPassword.$dirty && form.tbxPassword.$touched }">
+                <label class="control-label" for="auth-dialog-signup-password">Password</label>
+                <input type="password" class="form-control" id="auth-dialog-signup-password" name="tbxPassword"
+                       minlength="5" maxlength="20" required
+                       ng-model="userModel.password"
+                       ng-disabled="isBusy" />
+                <div class="help-block" ng-messages="form.tbxPassword.$error" ng-if="form.tbxPassword.$dirty && form.tbxPassword.$touched">
+                    <div ng-message="required">This field is required.</div>
+                    <div ng-message="minlength, maxlength">Length must be between 5 and 20.</div>
+                </div>
+            </div>
+            <div class="form-group" ng-class="{ 'has-error' : form.tbxConfirmPassword.$invalid && form.tbxConfirmPassword.$dirty && form.tbxConfirmPassword.$touched }">
+                <label class="control-label" for="auth-dialog-signup-password-confirm">Confirm password</label>
+                <input type="password" class="form-control" id="auth-dialog-signup-confirmPassowrd" name="tbxConfirmPassword"
+                       minlength="5" maxlength="20" required
+                       ng-model="userModel.confirmPassword"
+                       ng-disabled="isBusy"
+                       dt-compare-to="userModel.password" />
+                <div class="help-block" ng-messages="form.tbxConfirmPassword.$error" ng-if="form.tbxConfirmPassword.$dirty && form.tbxConfirmPassword.$touched">
+                    <div ng-message="required">This field is required.</div>
+                    <div ng-message="minlength, maxlength">Length must be between 5 and 20.</div>
+                    <div ng-message="dtCompareTo">Passwords don't match.</div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary" ng-click="onRegisterClick()" ng-disabled="isBusy || form.$invalid">
+            {{ isBusy ? 'Registering...' : 'Register'}}
+        </button>
+        <a class="btn btn-link" ng-click="setAuthView('login')" ng-disabled="isBusy">Cancel</a>
+    </div>
+</div>

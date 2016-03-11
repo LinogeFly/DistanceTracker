@@ -1,0 +1,9 @@
+﻿<div class="menu-view" ng-controller="shareController">
+    <input id="tbxPermaLink" class="form-control" type="text" readonly="readonly" value="{{ share.permaLink }}" />
+</div>
+
+<script>
+    $('#tbxPermaLink').click(function () {
+        $(this).select();
+    });
+</script>

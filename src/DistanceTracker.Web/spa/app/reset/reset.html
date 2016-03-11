@@ -1,0 +1,12 @@
+﻿<div class="menu-view" ng-controller="resetController">
+    <button class="btn btn-danger" type="button" data-toggle="modal" data-target="#confirm-delete"
+        ng-click="resetRoute()"
+        ng-disabled="reset.isResetingRoute">
+        {{ reset.isResetingRoute ? 'Reseting route...' : 'Reset route'}}
+    </button>
+    <button class="btn btn-danger" type="button" data-toggle="modal" data-target="#confirm-delete"
+            ng-click="resetProgress()"
+            ng-disabled="reset.isResetingProgress">
+        {{ reset.isResetingProgress ? 'Reseting progress...' : 'Reset progress'}}
+    </button>
+</div>

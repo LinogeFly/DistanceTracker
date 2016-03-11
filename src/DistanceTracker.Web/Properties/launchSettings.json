@@ -1,0 +1,31 @@
+{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:52251/",
+      "sslPort": 0
+    }
+  },
+  "profiles": {
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "environmentVariables": {
+        "Database:SQLiteFilePath": "Data\\distance-tracker.sqlite",
+        "Hosting:Environment": "Development"
+      }
+    },
+    "IIS Express (Prod)": {
+      "commandName": "IISExpress",
+      "environmentVariables": {
+        "Hosting:Environment": "Production"
+      }
+    },
+    "web": {
+      "commandName": "web",
+      "environmentVariables": {
+        "Hosting:Environment": "Development"
+      }
+    }
+  }
+}

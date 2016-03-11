@@ -1,0 +1,16 @@
+{
+  "version": "1.0.0-*",
+  "description": "DistanceTracker.Data",
+  "authors": [ "xdzhal" ],
+  "tags": [ "" ],
+  "projectUrl": "",
+  "licenseUrl": "",
+  "frameworks": {
+    "dnx451": { }
+  },
+  "dependencies": {
+    "Newtonsoft.Json": "6.0.6",
+    "Microsoft.Extensions.Logging": "1.0.0-rc1-final",
+    "EntityFramework.Commands": "7.0.0-rc1-final"
+  }
+}

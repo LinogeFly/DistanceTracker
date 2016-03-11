@@ -1,0 +1,18 @@
+﻿<div class="modal fade in" id="auth-dialog" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static" data-keyboard="false" ng-controller="authController">
+    <div class="modal-dialog modal-sm">
+        <div ng-switch on="authView">
+            <div ng-switch-when="login">
+                <div ng-include="'templates/auth/login.html'"></div>
+            </div>
+            <div ng-switch-when="signup">
+                <div ng-include="'templates/auth/signup.html'"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('#auth-dialog').modal('show');
+    });
+</script>

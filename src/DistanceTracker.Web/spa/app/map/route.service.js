@@ -41,8 +41,8 @@
                     cachedRoute = route;
                     deferred.resolve(route);
                 }).error(function (msg, code) {
-                    deferred.reject(msg);
-                    $log.error(msg, code);
+                    deferred.reject(code);
+                    $log.error(msg);
                 });
 
             return deferred.promise;
@@ -63,8 +63,8 @@
                     $rootScope.$broadcast(constantsService.Events.Route.CHANGED);
                     deferred.resolve();
                 }).error(function (msg, code) {
-                    deferred.reject(msg);
-                    $log.error(msg, code);
+                    deferred.reject(code);
+                    $log.error(msg);
                 });
 
             return deferred.promise;
@@ -80,8 +80,8 @@
                     deferred.resolve();
                 })
                 .error(function (msg, code) {
-                    deferred.reject(msg);
-                    $log.error(msg, code);
+                    deferred.reject(code);
+                    $log.error(msg);
                 });
 
             return deferred.promise;

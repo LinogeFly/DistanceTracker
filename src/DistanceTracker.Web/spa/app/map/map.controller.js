@@ -3,9 +3,9 @@
 
     angular
         .module('app')
-        .controller('mapController', ['$scope', '$log', '$window', '$location', 'routeService', 'progressService', 'constantsService', 'shareService', 'authService', mapController]);
+        .controller('mapController', ['$scope', '$log', '$window', '$location', 'routeService', 'progressService', 'constantsService', 'shareService', 'authService', 'errorHandlerService', mapController]);
 
-    function mapController($scope, $log, $window, $location, routeService, progressService, constantsService, shareService, authService) {
+    function mapController($scope, $log, $window, $location, routeService, progressService, constantsService, shareService, authService, errorHandlerService) {
         // Scope default values and initialization
 
         $scope.distance = 0;
@@ -20,6 +20,8 @@
             routeService.getRoute()
                 .then(function (route) {
                     addRouteToTheMap(route.startLocation, route.endLocation, route.waypoints);
+                }, function (errorCode) {
+                    errorHandlerService.handle(errorCode);
                 });
         }
 
@@ -65,6 +67,8 @@
                 routeService.saveRoute(route)
                     .then(function () {
                         $scope.distance = route.legs[0].distance.value;
+                    }, function (errorCode) {
+                        errorHandlerService.handle(errorCode);
                     });
             }
         }
@@ -136,6 +140,8 @@
                 .then(function (data) {
                     $scope.progress = data;
                     addProgressMarkerToTheMap(data);
+                }, function (errorCode) {
+                    errorHandlerService.handle(errorCode);
                 });
         }
 
@@ -159,6 +165,8 @@
                 function () {
                     $location.path('/');
                     $window.location.reload();
+                }, function (errorCode) {
+                    errorHandlerService.handle(errorCode);
                 }
             );
         };
@@ -210,6 +218,11 @@
                 function (user) {
                     $scope.currentUser = user;
                     start();
+                }, function (errorCode) {
+                    if (errorCode === 401) // Unauthorized error is going to be handled with Interceptors Service
+                        return; 
+
+                    errorHandlerService.handle(errorCode);
                 }
             );
         }

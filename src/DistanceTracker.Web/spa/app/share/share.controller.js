@@ -3,9 +3,9 @@
 
     angular
         .module('app')
-        .controller('shareController', ['$scope', '$location', '$q', 'constantsService', 'progressService', 'routeService', 'shareService', shareController]);
+        .controller('shareController', ['$scope', '$location', '$q', 'constantsService', 'progressService', 'routeService', 'shareService', 'errorHandlerService', shareController]);
 
-    function shareController($scope, $location, $q, constantsService, progressService, routeService, shareService) {
+    function shareController($scope, $location, $q, constantsService, progressService, routeService, shareService, errorHandlerService) {
         $scope.share = {
             permaLink: ''
         };
@@ -14,6 +14,8 @@
             $q.all([progressService.getProgress(), routeService.getRoute()])
                 .then(function (data) {
                     $scope.share.permaLink = getPermaLink(data[0], data[1]);
+                }, function (errorCode) {
+                    errorHandlerService.handle(errorCode);
                 });
         }
 

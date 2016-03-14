@@ -28,7 +28,8 @@ gulp.task('dev:lib', ['clean:lib'], function () {
         'bower_components/**/dist/**/',
         'bower_components/angular*/angular*.js',
         'bower_components/angular*/ui-bootstrap-tpls.*',
-        'bower_components/moment/moment.js'
+        'bower_components/moment/moment.js',
+        'bower_components/toastr*/*.*'
     ])
         .pipe(gulp.dest(paths.lib));
 });
@@ -38,7 +39,8 @@ gulp.task('prod:lib', ['clean:lib'], function () {
         'bower_components/**/dist/**/*.min.*',
         'bower_components/angular*/angular*.min.js',
         'bower_components/angular*/ui-bootstrap-tpls.min.js',
-        'bower_components/moment/min/moment.min.js'
+        'bower_components/moment/min/moment.min.js',
+        'bower_components/toastr*/*.min.*'
     ])
         .pipe(gulp.dest(paths.lib));
 });

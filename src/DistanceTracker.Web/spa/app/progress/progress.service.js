@@ -38,8 +38,8 @@
                     cachedProgress = progress;
                     deferred.resolve(progress);
                 }).error(function (msg, code) {
-                    deferred.reject(msg);
-                    $log.error(msg, code);
+                    deferred.reject(code);
+                    $log.error(msg);
                 });
 
             return deferred.promise;
@@ -56,8 +56,8 @@
                     deferred.resolve();
                 })
                 .error(function (msg, code) {
-                    deferred.reject(msg);
-                    $log.error(msg, code);
+                    deferred.reject(code);
+                    $log.error(msg);
                 });
 
             return deferred.promise;
@@ -74,8 +74,8 @@
                     deferred.resolve();
                 })
                 .error(function (msg, code) {
-                    deferred.reject(msg);
-                    $log.error(msg, code);
+                    deferred.reject(code);
+                    $log.error(msg);
                 });
 
             return deferred.promise;
@@ -96,8 +96,8 @@
                     cachedHistory = history;
                     deferred.resolve(history);
                 }).error(function (msg, code) {
-                    deferred.reject(msg);
-                    $log.error(msg, code);
+                    deferred.reject(code);
+                    $log.error(msg);
                 });
 
             return deferred.promise;

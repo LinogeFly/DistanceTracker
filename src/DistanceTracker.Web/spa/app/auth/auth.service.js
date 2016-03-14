@@ -24,7 +24,7 @@
                 })
                 .error(function (msg, code) {
                     deferred.reject(code);
-                    $log.error(msg, code);
+                    $log.error(msg);
                 });
 
             return deferred.promise;
@@ -40,7 +40,7 @@
                 })
                 .error(function (msg, code) {
                     deferred.reject(code);
-                    $log.error(msg, code);
+                    $log.error(msg);
                 });
 
             return deferred.promise;
@@ -55,7 +55,7 @@
                 })
                 .error(function (msg, code) {
                     deferred.reject(code);
-                    $log.error(msg, code);
+                    $log.error(msg);
                 });
 
             return deferred.promise;
@@ -78,7 +78,7 @@
                 })
                 .error(function (msg, code) {
                     if (code !== 401)
-                        $log.error(msg, code);
+                        $log.error(msg);
 
                     deferred.reject(code);
                 });

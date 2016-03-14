@@ -8,12 +8,16 @@
 
     <environment names="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/lib/toastr/toastr.css" />
         <link rel="stylesheet" href="~/app.css" asp-append-version="true" />
     </environment>
     <environment names="Production">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"
+              asp-fallback-href="~/lib/toastr/toastr.min.css"
+              asp-fallback-test-class="toast-close-button" asp-fallback-test-property="position" asp-fallback-test-value="relative" />
         <link rel="stylesheet" href="~/app.min.css" asp-append-version="true" />
     </environment>
 </head>
@@ -72,6 +76,7 @@
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
         <script src="~/lib/moment.js"></script>
+        <script src="~/lib/toastr/toastr.js"></script>
         <script src="~/lib/angular/angular.js"></script>
         <script src="~/lib/angular-messages/angular-messages.js"></script>
         <script src="~/lib/angular-route/angular-route.js"></script>
@@ -91,6 +96,10 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"
                 asp-fallback-src="~/lib/moment.min.js"
                 asp-fallback-test="window.moment">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"
+                asp-fallback-src="~/lib/toastr/toastr.min.js"
+                asp-fallback-test="window.toastr">
         </script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"
                 asp-fallback-src="~/lib/angular/angular.min.js"

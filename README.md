@@ -4,11 +4,9 @@ It's a small web site for practicing ASP.NET 5 (vNext), AngularJS, Entity Framew
 
 ## What it actually does
 
-In a nutshell it's a web site for my friend who likes to run :)
+In a nutshell it's a web site I made for a friend who likes to run.
 
-She asked me to make a tool where you could create a long route in Google Maps, say from Helsinki to Paris. And then after every run you would submit a distance you had run. Throughout a long turm you can see were you would be if you were to actually run that route. So she could see if she can make it from Helsinki to Paris in a year, for example.
-
-The web site can be used by anyone who wants. It's available [here](http://distancetracker.azurewebsites.net/).
+They asked me to make a tool where you could create a long route in Google Maps, say from Helsinki to Paris. And then after every run you would submit a distance you had run. Throughout a long turm you can see were you would be if you were to actually run that route. So you could see if you can make it from Helsinki to Paris in a year, for example.
 
 # TODO
 
